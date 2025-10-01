@@ -2,8 +2,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding-block: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background: var(--brand-color);
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }
 
 nav ul {
@@ -15,8 +28,16 @@ nav ul {
     padding-block: 8px;
 }
 
-nav ul li:first-child img {
+.lupa {
+    fill: var(--text-color-secondary);
+    width: 24px;
+    height: 24px;
     vertical-align: middle;
+    transition: all 0.4s ease;
+}
+
+.lupa:hover {
+    fill: var(--brand-color);
 }
 
 nav ul li:last-child img {
